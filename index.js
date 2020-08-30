@@ -44,7 +44,7 @@ $(".portfolio-item img").on("mouseleave", function () {
 });
 
 const body = document.body,
-  scrollWrap = document.getElementsByClassName("smooth-scroll-wrapper")[0],
+  scrollWrap = document.getElementsByClassName("main")[0],
   height = scrollWrap.getBoundingClientRect().height - 1,
   speed = 0.04;
 
@@ -67,13 +67,13 @@ $(function () {
   var elements = $(".text, .img").toArray();
   $(window).scroll(function () {
     elements.forEach(function (item) {
-      if ($(this).scrollTop() >= $(item).offset().top - 400) {
+      if ($(this).scrollTop() >= $(item).offset().top - 600) {
         $(item).addClass("reveal");
       }
     });
   });
   elements.forEach(function (item) {
-    if ($(this).scrollTop() >= $(item).offset().top - 400) {
+    if ($(this).scrollTop() >= $(item).offset().top - 600) {
       $(item).addClass("reveal");
     }
   });

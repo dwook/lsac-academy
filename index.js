@@ -28,53 +28,20 @@ TweenMax.to({}, 0.016, {
   },
 });
 
-$(document).on("mousemove", function (e) {
-  mouseX = e.pageX;
-  mouseY = e.pageY;
-});
-
-$(".portfolio-item img").on("mouseenter", function () {
-  cursor.addClass("active");
-  follower.addClass("active");
-});
-
-$(".portfolio-item img").on("mouseleave", function () {
-  cursor.removeClass("active");
-  follower.removeClass("active");
-});
-
-const body = document.body,
-  scrollWrap = document.getElementsByClassName("main")[0],
-  height = scrollWrap.getBoundingClientRect().height - 1,
-  speed = 0.04;
-
-var offset = 0;
-
-body.style.height = Math.floor(height) + "px";
-
-function smoothScroll() {
-  offset += (window.pageYOffset - offset) * speed;
-
-  var scroll = "translateY(-" + offset + "px) translateZ(0)";
-  scrollWrap.style.transform = scroll;
-
-  callScroll = requestAnimationFrame(smoothScroll);
-}
-
-smoothScroll();
-
-$(function () {
-  var elements = $(".text, .img").toArray();
-  $(window).scroll(function () {
+(function () {
+  $(function () {
+    var elements = $(".text, .img").toArray();
+    $(window).scroll(function () {
+      elements.forEach(function (item) {
+        if ($(this).scrollTop() >= $(item).offset().top - 600) {
+          $(item).addClass("reveal");
+        }
+      });
+    });
     elements.forEach(function (item) {
       if ($(this).scrollTop() >= $(item).offset().top - 600) {
         $(item).addClass("reveal");
       }
     });
   });
-  elements.forEach(function (item) {
-    if ($(this).scrollTop() >= $(item).offset().top - 600) {
-      $(item).addClass("reveal");
-    }
-  });
-});
+})();

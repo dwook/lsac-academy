@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0;
     cursor: none;
-    background: #161616;
+    background: #000;
     font-family: 'Darker Grotesque', 'Noto Sans KR', sans-serif;
 }
 
@@ -27,6 +27,36 @@ ul {
 
 li {
   list-style: none;
+}
+
+h1 {
+  color: #fff;
+  font-family: 'Darker Grotesque', sans-serif;
+  max-width: 1024px;
+  font-size: 3rem;
+  font-weight: 400;
+  letter-spacing: 1.4px;
+  padding: 10px 0;
+  margin: 6rem 1rem 4rem;
+  text-align: center;
+}
+
+.mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    margin: 3rem 1rem 2rem;
+    font-size: 1.2rem;
+  }
+  p {
+    font-size: 1rem;
+  }
+  .mobile {
+    display: block;
+  }
+
 }
 
 .gnb {
@@ -62,19 +92,6 @@ li {
   width: 80px;
   height: 80px;
 }
-
-@media (max-width: 1300px) {
-  .gnb .logo {
-    left:20px;
-  }
-}
-
-@media (max-width: 768px) {
-  .gnb .logo {
-    display: none;
-  }
-}
-
 
 .gnb .title {
   color: #fff;
@@ -136,6 +153,30 @@ li {
   transition: transform .4s ease;
   transition: transform .4s ease, -webkit-transform .4s ease;
 }
+
+@media (max-width: 1300px) {
+  .gnb .logo {
+    left:20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .gnb:after {
+    top: 64px;
+    height: 64px;
+  }
+
+  .gnb .title {
+    font-size: 1.2rem;
+  }
+  .gnb .logo {
+    display: none;
+  }
+  .gnb ul {
+    font-size: 1rem;
+  }
+}
+
 
 
 @media all and (max-width:1024px) {
@@ -231,8 +272,6 @@ li {
   width: 100%;
 }
 
-
-
 .lecturer .info{
   position: absolute;
   bottom:0;
@@ -255,11 +294,22 @@ li {
 }
 
 
-
 @media (min-width: 768px) {
   .lecturer::first-letter {
     top: -201px;
     height: 200px;
+  }
+
+}
+
+@media (max-width: 768px) {
+  .lecturer .info p {
+    font-size: 1.2rem;
+  }
+
+  .lecturer .info .detail{
+    font-size: 0.8rem;
+    line-height: 1;
   }
 }
 
@@ -297,6 +347,19 @@ li {
 }
 
 
+@media (max-width: 768px) {
+  .curriculum {
+    margin-bottom: 5rem;
+  }
+  .curriculum h2{
+    font-size: 1.2rem;
+  }
+  .curriculum li{
+    width: 14rem;
+    display: inline-block;
+  }
+}
+
 .advanced {
   position: relative;
 }
@@ -306,7 +369,7 @@ li {
   background-image: url('img/coach.jpg');
   -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
-  padding: 15rem;
+  padding: 15rem 0;
   background-position: center;
   background-size: cover;
   opacity: 0.3;
@@ -328,11 +391,19 @@ li {
   text-align:center;
 }
 
+@media (max-width: 768px) {
+  .advanced .image {
+    padding: 8rem 0;
+  }
+  .advanced .detail {
+    font-size: 1rem;
+  }
+}
+
 .button {
   display: inline-block;
   position: relative;
-  height: 6.6rem;
-  padding: 0 2.6rem;
+  height: 3rem;
   text-align: center;
   font-weight: 600;
   color: #fff;
@@ -342,18 +413,18 @@ li {
   cursor: pointer;
   transition: all .4s ease-in-out;
   overflow: hidden;
-  padding: 0 6rem 0 4rem;
+  padding: 0 3rem 0 2rem;
   background: #7d31ea;
   transform: translateZ(0);
   font-size: 1.6rem;
-  line-height: 6.7rem;
+  line-height: 3rem;
 }
 
 .button:before {
   content: "";
   position: absolute;
   top: calc(50% - .5rem);
-  right: 3.4rem;
+  right: 1.4rem;
   width: 1rem;
   height: 1rem;
   background: #fff;
@@ -370,6 +441,15 @@ li {
 .button:hover:before {
   transform: translate3d(4.4rem,0,0) scale(.5);
 }
+
+@media (max-width: 768px) {
+  .button {
+    height: 2.4rem;
+    font-size: 1.2rem;
+    line-height: 2.4rem;
+  }
+}
+
 
 .video-container{
   padding-bottom: 56.25%;
@@ -499,19 +579,6 @@ li {
   margin: 0 auto;
 }
 
-
-
-h1 {
-  color: #fff;
-  font-family: 'Darker Grotesque', sans-serif;
-  max-width: 1024px;
-  font-size: 3rem;
-  font-weight: 400;
-  letter-spacing: 1.4px;
-  padding: 10px 0;
-  margin: 6rem auto 4rem;
-}
-
 .text {
   color: transparent;
   display: inline-block;
@@ -603,17 +670,7 @@ h1 {
   }
 }
 
-@media (max-width: 768px) {
-  .content {
-      width: 100%;
-  }
-  h1 {
-      font-size: 1.5rem;
-  }
-  p {
-      font-size: 16px;
-  }
-}
+
 
 
 footer .container {
@@ -621,4 +678,11 @@ footer .container {
   padding: 8rem 4rem 4rem;
   color:#fff;
   text-align: center;
+}
+
+
+@media (max-width: 768px) {
+  footer .container {
+    font-size: 0.8rem;
+  }
 }

@@ -262,7 +262,7 @@ h1 {
   filter: grayscale(100%);
 }
 
-.lecturer li .img-container:hover{
+.lecturer li .img-container:hover, .lecturer li .img-container:focus {
   -webkit-filter: grayscale(0%);
   filter: grayscale(0%);
 }

@@ -32,12 +32,11 @@ li {
 h1 {
   color: #fff;
   font-family: 'Darker Grotesque', sans-serif;
-  max-width: 1024px;
   font-size: 3rem;
   font-weight: 400;
   letter-spacing: 1.4px;
   padding: 10px 0;
-  margin: 6rem 1rem 4rem;
+  margin: 6rem auto 4rem;
   text-align: center;
 }
 
@@ -536,13 +535,11 @@ h1 {
 }
 
 
-
 @media (max-width: 768px) {
   .cursor, .cursor-follower {
     display: none;
   }
 }
-
 
 .portfolio-thumb {
   overflow: hidden;
